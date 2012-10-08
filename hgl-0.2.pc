@@ -1,0 +1,15 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+
+
+Name: OpenGL extension for HMworld Data 
+Description: The OpenGL-Data-Library for HMWorld
+Version: 0.2
+Requires: gl Hmwd-0.2
+Libs: -L${libdir} -lhgl-0.2
+Cflags: -I${includedir}/hgl-0.2
+~                                             
