@@ -14,14 +14,14 @@
 using rpg;
 using GL;
 namespace rpg {
-	public class OpenGLTileset:rpg.GdkTexture {
-		/** Textur-ID des Tilesets */
-		public GLuint texID;
+	public class OpenGLTexture : GLib.Object {
 		/**
 		 * Laedt das Tileset in den Texturspeicher.
 		 */
-		private void load_opengl_texture ()
+		public static GLuint load_opengl_texture (GdkTexture tex)
 		{
+			/** Textur-ID des Tilesets */
+			GLuint texID = 0;
 			glGenTextures (1, &texID);
 			glBindTexture (GL_TEXTURE_2D, texID);
 
@@ -36,14 +36,14 @@ namespace rpg {
 			glTexParameteri (GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 			glTexParameteri (GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-			glTexImage2D (GL_TEXTURE_2D, 0, this.colorspace.to_channel(), (GL.GLsizei) this.width, (GL.GLsizei) this.height, 0, rpg.OpenGLColorspace.parse(this.colorspace), GL_UNSIGNED_BYTE, this.pixels);
+			glTexImage2D (GL_TEXTURE_2D, 0, tex.colorspace.to_channel(), (GL.GLsizei) tex.width, (GL.GLsizei) tex.height, 0, rpg.OpenGLColorspace.parse(tex.colorspace), GL_UNSIGNED_BYTE, tex.pixels);
+			return texID;
 		}
 
 		/**
 		 * Bindet an dieses Tileset als Textur
 		 */
-		public void bind_texture ()
-		{
+		public static void bind_texture (GLuint texID){
 			glBindTexture (GL_TEXTURE_2D, texID);
 		}
 	}
