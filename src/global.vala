@@ -14,14 +14,16 @@
 using rpg;
 using GL;
 namespace rpg {
-	public static GLenum OpenGLColorspace.parse (rpg.Colorspace colorspace) {
-		switch (colorspace) {
-			case rpg.Colorspace.RGB:
-				return GL.GL_RGB;
-			case  rpg.Colorspace.RGBA:
-				return GL.GL_RGBA;
-			default:
-				error("Can't parse Colorspace!");
+	public class OpenGLColorspace {
+		public static GLenum parse (rpg.Colorspace colorspace) {
+			switch (colorspace) {
+				case rpg.Colorspace.RGB:
+					return GL.GL_RGB;
+				case  rpg.Colorspace.RGBA:
+					return GL.GL_RGBA;
+				default:
+					error("Can't parse Colorspace!");
+			}
 		}
 	}
 }
