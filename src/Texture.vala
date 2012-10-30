@@ -17,9 +17,6 @@ namespace rpg {
 	public class OpenGLTileset:rpg.GdkTexture {
 		/** Textur-ID des Tilesets */
 		public GLuint texID;
-		public OpenGLTileset(string filename) {
-			Object(filename:filename);
-		}
 		/**
 		 * Laedt das Tileset in den Texturspeicher.
 		 */
