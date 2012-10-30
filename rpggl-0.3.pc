@@ -8,8 +8,8 @@ datadir=${datarootdir}
 
 Name: OpenGL extension for HMworld Data 
 Description: The OpenGL-Data-Library for HMWorld
-Version: 0.2
-Requires: gl Hmwd-0.2
-Libs: -L${libdir} -lhgl-0.2
-Cflags: -I${includedir}/hgl-0.2
+Version: 0.3
+Requires: gl rpggl-0.3
+Libs: -L${libdir} -lrpggl-0.3
+Cflags: -I${includedir}/rpggl-0.3
 ~                                             

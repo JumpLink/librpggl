@@ -11,13 +11,13 @@
  * Author:
  *	Pascal Garber <pascal.garber@gmail.com>
  */
-using Hmwd;
+using rpg;
 using GL;
-namespace hgl {
-	public class Tileset:Hmwd.Tileset {
+namespace rpg {
+	public class OpenGLTileset:rpg.GdkTexture {
 		/** Textur-ID des Tilesets */
 		public GLuint texID;
-		public Tileset(string filename) {
+		public OpenGLTileset(string filename) {
 			Object(filename:filename);
 		}
 		/**
@@ -39,7 +39,7 @@ namespace hgl {
 			glTexParameteri (GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 			glTexParameteri (GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-			glTexImage2D (GL_TEXTURE_2D, 0, tex.colorspace.to_channel(), (GL.GLsizei) tex.width, (GL.GLsizei) tex.height, 0, hgl.Colorspace.parse(tex.colorspace), GL_UNSIGNED_BYTE, tex.pixels);
+			glTexImage2D (GL_TEXTURE_2D, 0, this.colorspace.to_channel(), (GL.GLsizei) this.width, (GL.GLsizei) this.height, 0, rpg.Colorspace.parse(this.colorspace), GL_UNSIGNED_BYTE, this.pixels);
 		}
 
 		/**

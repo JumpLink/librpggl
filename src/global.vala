@@ -11,15 +11,15 @@
  * Author:
  *	Pascal Garber <pascal.garber@gmail.com>
  */
-using Hmwd;
+using rpg;
 using GL;
-namespace hgl {
+namespace rpg {
 	public class Colorspace {
-		public static GLenum parse (Hmwd.Colorspace colorspace) {
+		public static GLenum parse (rpg.Colorspace colorspace) {
 			switch (colorspace) {
-				case Hmwd.Colorspace.RGB:
+				case rpg.Colorspace.RGB:
 					return GL.GL_RGB;
-				case  Hmwd.Colorspace.RGBA:
+				case  rpg.Colorspace.RGBA:
 					return GL.GL_RGBA;
 				default:
 					error("Can't parse Colorspace!");
