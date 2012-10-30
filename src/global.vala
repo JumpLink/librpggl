@@ -14,7 +14,7 @@
 using rpg;
 using GL;
 namespace rpg {
-	public enum OpenGLColorspace : rpg.Colorspace {
+	public enum OpenGLColorspace {
 		public static GLenum parse (rpg.Colorspace colorspace) {
 			switch (colorspace) {
 				case rpg.Colorspace.RGB:
