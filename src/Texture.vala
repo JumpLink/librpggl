@@ -39,7 +39,7 @@ namespace rpg {
 			glTexParameteri (GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 			glTexParameteri (GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-			glTexImage2D (GL_TEXTURE_2D, 0, this.colorspace.to_channel(), (GL.GLsizei) this.width, (GL.GLsizei) this.height, 0, rpg.Colorspace.parse(this.colorspace), GL_UNSIGNED_BYTE, this.pixels);
+			glTexImage2D (GL_TEXTURE_2D, 0, this.colorspace.to_channel(), (GL.GLsizei) this.width, (GL.GLsizei) this.height, 0, rpg.OpenGLColorspace.parse(this.colorspace), GL_UNSIGNED_BYTE, this.pixels);
 		}
 
 		/**
