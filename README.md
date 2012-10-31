@@ -1,4 +1,4 @@
 libhgl
 =====
 
-OpenGL Extension for [libhmwd](https://github.com/JumpLink/HMWorld-Data)
+OpenGL Extension for [librpg](https://github.com/JumpLink/librpg)
